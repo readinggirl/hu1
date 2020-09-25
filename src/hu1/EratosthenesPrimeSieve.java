@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class EratosthenesPrimeSieve implements PrimeSieve {
 
-    int obergrenze;
+    static boolean[] primes = null;
 
     /**
      * @param args the command line arguments
@@ -22,20 +22,31 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
         Scanner scanner = new Scanner(System.in, "Windows-1252");
         System.out.println("Geben Sie eine Obergrenze ein");
         EratosthenesPrimeSieve er = new EratosthenesPrimeSieve(Integer.parseInt(scanner.nextLine()));
+
+        int length = primes.length;
+
     }
 
-    public EratosthenesPrimeSieve(int obergrenze) {
-        this.obergrenze = obergrenze;
+    public EratosthenesPrimeSieve(int pobergrenze) {
+        primes = new boolean[pobergrenze];
     }
 
     @Override
     public boolean isPrime(int p) {
+        int factors = 0;
+        int j = 1;
 
+        while (j <= p) {
+            if (p % j == 0) {
+                factors++;
+            }
+            j++;
+        }
+        return (factors == 2);
     }
 
     @Override
     public void printPrimes() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
 }
