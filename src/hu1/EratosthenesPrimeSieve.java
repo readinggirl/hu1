@@ -58,5 +58,11 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
                 primes[i] = false;
             }
         }
+
+        for (int y = 2; y < primes.length; y++) {
+            if (primes[y]) {
+                System.out.print(y + " ");
+            }
+        }
     }
 }
