@@ -13,13 +13,15 @@ import java.util.Scanner;
  */
 public class EratosthenesPrimeSieve implements PrimeSieve {
 
+    static Scanner scanner = new Scanner(System.in, "Windows-1252");
+
     static boolean[] primes = null;
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in, "Windows-1252");
+
         System.out.println("Geben Sie eine Obergrenze ein");
         EratosthenesPrimeSieve er = new EratosthenesPrimeSieve(Integer.parseInt(scanner.nextLine()));
 
@@ -47,6 +49,8 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
 
     @Override
     public void printPrimes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for (int i = 0; i < primes.length; i++) {
+            primes[i] = true;
+        }
     }
 }
