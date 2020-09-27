@@ -15,22 +15,44 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
 
     static Scanner scanner = new Scanner(System.in, "Windows-1252");
 
-    static boolean[] primes = null;
+    int[] evenNr;
+    int[] primeNr;
+
+    boolean[] primes = null;
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+        System.out.println("Eratosthenes Primzahlen finder Algorithmus");
         System.out.println("Geben Sie eine Obergrenze ein");
         EratosthenesPrimeSieve er = new EratosthenesPrimeSieve(Integer.parseInt(scanner.nextLine()));
         er.printPrimes();
-        int length = primes.length;
 
     }
 
-    public EratosthenesPrimeSieve(int pobergrenze) {
-        primes = new boolean[pobergrenze];
+    public EratosthenesPrimeSieve(int obergrenze) {
+        primes = new boolean[obergrenze];
+    }
+
+    public void getPrimes() {
+        int count = 0;
+
+        for (int i = 0; i < primes.length; i++) {
+            if (primes[i]) {
+                count++;
+            }
+        }
+
+        primeNr = new int[count];
+
+        int counter = 0;
+        for (int i = 0; i < count; i++) {
+            if (primes[i]) {
+                primeNr[counter] = i;
+                counter++;
+            }
+        }
     }
 
     @Override
