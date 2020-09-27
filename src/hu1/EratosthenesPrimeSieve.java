@@ -120,4 +120,23 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
         }
     }
 
+    public void printSums() {
+        for (int i = 0; i < evenNr.length; i++) {
+            for (int j = 0; j < primeNr.length; j++) {
+                boolean found = false;
+                for (int k = 0; k < primeNr.length; k++) {
+                    if (primeNr[j] + primeNr[k] == evenNr[i]) {
+                        System.out.println(evenNr[i] + " sum: " + evenNr[i] + " = " + primeNr[k] + " + " + primeNr[j]);
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) {
+                    break;
+                }
+            }
+
+        }
+    }
+
 }
