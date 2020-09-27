@@ -35,26 +35,6 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
         primes = new boolean[obergrenze];
     }
 
-    public void getPrimes() {
-        int count = 0;
-
-        for (int i = 0; i < primes.length; i++) {
-            if (primes[i]) {
-                count++;
-            }
-        }
-
-        primeNr = new int[count];
-
-        int counter = 0;
-        for (int i = 0; i < count; i++) {
-            if (primes[i]) {
-                primeNr[counter] = i;
-                counter++;
-            }
-        }
-    }
-
     @Override
     public boolean isPrime(int p) {
         int factors = 0;
@@ -87,4 +67,34 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
             }
         }
     }
+
+    public void getPrimes() {
+        int count = 0;
+
+        for (int i = 0; i < primes.length; i++) {
+            if (primes[i]) {
+                count++;
+            }
+        }
+
+        primeNr = new int[count];
+
+        int counter = 0;
+        for (int i = 0; i < count; i++) {
+            if (primes[i]) {
+                primeNr[counter] = i;
+                counter++;
+            }
+        }
+    }
+
+    public boolean isEven(int p) {
+        if (p <= 2) {
+            return false;
+        } else if (p % 2 == 0) {
+            return true;
+        }
+        return false;
+    }
+
 }
