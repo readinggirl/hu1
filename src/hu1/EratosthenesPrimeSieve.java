@@ -97,4 +97,27 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
         return false;
     }
 
+    public void even() {
+        int[] tmpNr = new int[primes.length];
+
+        for (int i = 0; i < tmpNr.length; i++) {
+            tmpNr[i] = i;
+        }
+        int counter = 0;
+        for (int i = 0; i < tmpNr.length; i++) {
+            if (!isEven(i)) {
+                tmpNr[i] = -1;
+                counter++;
+            }
+        }
+        evenNr = new int[primes.length - counter];
+        int count = 0;
+        for (int y = 2; y < tmpNr.length; y++) {
+            if (tmpNr[y] != -1) {
+                evenNr[count] = tmpNr[y];
+                count++;
+            }
+        }
+    }
+
 }
