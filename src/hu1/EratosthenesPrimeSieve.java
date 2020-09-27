@@ -28,7 +28,13 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
         System.out.println("Geben Sie eine Obergrenze ein");
         EratosthenesPrimeSieve er = new EratosthenesPrimeSieve(Integer.parseInt(scanner.nextLine()));
         er.printPrimes();
+        System.out.println("");
 
+        System.out.println("--------------------");
+        System.out.println("Summen:");
+        er.getPrimes();
+        er.even();
+        er.printSums();
     }
 
     public EratosthenesPrimeSieve(int obergrenze) {
